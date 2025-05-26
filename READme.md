@@ -34,7 +34,7 @@ JWT_SECRET=your_jwt_secret
 Now start the backend server:
 
 ```bash
-npm start
+node index.js
 ```
 
 ---
