@@ -1,4 +1,4 @@
-# 🛡️ PhishDetector
+#  PhishDetector
 
 PhishDetector is a smart web app that checks if a website is safe or a phishing attempt. It gives a risk score and shows your check history.
 
@@ -61,7 +61,7 @@ http://localhost:3000
 
 ---
 
-## ✅ Risk Levels
+##  Risk Levels
 
 | Score Range | Classification     |
 |-------------|--------------------|
@@ -72,16 +72,16 @@ http://localhost:3000
 
 ---
 
-## 📦 Features
+##  Features
 
-- 🧠 Heuristic-based phishing detection
-- 🔍 Google Safe Browsing
-- 📊 Pie chart showing risk level distribution
-- 🧾 History of checked URLs (requires login)
+-  Heuristic-based phishing detection
+-  Google Safe Browsing
+-  Pie chart showing risk level distribution
+-  History of checked URLs (requires login)
 
 ---
 
-## 🧰 Built With
+##  Built With
 
 - **Frontend**: React + Tailwind CSS  
 - **Backend**: Node.js + Express + PostgreSQL  
@@ -90,7 +90,7 @@ http://localhost:3000
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 Made by Kunal Gulati
 
