@@ -18,7 +18,7 @@ cd PhishDetector
 ### 2. 🖥️ Start the Backend
 
 ```bash
-cd backend
+cd server
 npm install
 ```
 
@@ -42,7 +42,7 @@ npm start
 ### 3. 🌐 Start the Frontend
 
 ```bash
-cd ../frontend
+cd ../client
 npm install
 npm start
 ```
