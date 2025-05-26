@@ -1,0 +1,346 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  background-color: #034047; 
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0891b2;
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #06b6d4;
+  box-shadow: 0 0 5px #06b6d4;
+}
+
+/* Forms */
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Containers */
+.container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Error messages */
+.error {
+  background-color: #b91c1c;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Result badges for URL check */
+.result-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 1rem;
+  margin-top: 10px;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.result-safe {
+  background: #065f46; /* green-800 */
+  color: #d1fae5; /* green-100 */
+  box-shadow: 0 0 8px #10b981aa; /* green shadow */
+}
+
+.result-danger {
+  background: #991b1b; /* red-800 */
+  color: #fecaca; /* red-300 */
+  box-shadow: 0 0 8px #ef4444aa; /* red shadow */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Icon styles */
+.result-icon {
+  font-size: 1.2rem;
+}
+
+/* Scrollbar styling for the history list (WebKit browsers) */
+ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+ul::-webkit-scrollbar-track {
+  background: #1f1f1f;
+  border-radius: 8px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background: #06b6d4;
+  border-radius: 8px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+  background: #0891b2;
+}
+
+.history-list {
+  max-height: 300px;       /* fixed height with scroll */
+  overflow-y: auto;
+  overflow-x: visible;     /* allow horizontal overflow visible */
+  border: 1px solid #444;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  list-style: none;
+  margin: 0;
+}
+
+.history-list li {
+  background-color: #2a2a2a;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  display: flex;                 /* ✅ fixed */
+  flex-direction: column;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;          /* prevent wrapping */
+  overflow-x: auto;             /* horizontal scroll */
+  
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #06b6d4 #1f1f1f;
+}
+
+/* Hover effect */
+.history-list li:hover {
+  background-color: #333;
+}
+
+/* Chrome/Safari/Edge scrollbar */
+.history-list li::-webkit-scrollbar {
+  height: 6px;
+}
+
+.history-list li::-webkit-scrollbar-track {
+  background: #1f1f1f;
+  border-radius: 8px;
+}
+
+.history-list li::-webkit-scrollbar-thumb {
+  background: #06b6d4;
+  border-radius: 8px;
+}
+
+.history-list li::-webkit-scrollbar-thumb:hover {
+  background: #0891b2;
+}
+
+
+/* URL text truncation with horizontal scroll - updated */
+.url-text {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow-x: visible;    /* show full url, no clipping */
+  text-overflow: clip;
+  max-width: 100%;
+  min-width: 0;
+  color: #cbd5e1;  /* light slate */
+  cursor: help;
+  padding-bottom: 2px; /* to avoid scrollbar overlap */
+}
+
+/* Optional scrollbar styling for URL text */
+.url-text::-webkit-scrollbar {
+  height: 6px;
+}
+
+.url-text::-webkit-scrollbar-track {
+  background: #1f1f1f;
+  border-radius: 8px;
+}
+
+.url-text::-webkit-scrollbar-thumb {
+  background: #06b6d4;
+  border-radius: 8px;
+}
+
+.url-text::-webkit-scrollbar-thumb:hover {
+  background: #0891b2;
+}
+
+/* Bottom row with status and time */
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: white;
+  
+  min-width: 80px;
+  text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.status-badge.safe {
+  background-color: #16a34a; /* Tailwind green-600 */
+  box-shadow: 0 0 8px #22c55e99;
+}
+
+.status-badge.danger {
+  background-color: #dc2626; /* Tailwind red-600 */
+  box-shadow: 0 0 8px #ef444499;
+}
+
+/* Checked time styling */
+.checked-time {
+  font-size: 0.75rem;
+  color: #94a3b8; /* slate-400 */
+  font-style: italic;
+  white-space: nowrap;
+}
+
+/* Scrollbar styling (Webkit browsers) */
+.history-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.history-list::-webkit-scrollbar-track {
+  background: #1f1f1f;
+  border-radius: 8px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background: #06b6d4;
+  border-radius: 8px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+  background: #0891b2;
+}
+
+/* Page background with a subtle gradient */
+.page-wrapper {
+  min-height: 100vh;
+  background-color: #d6f0f6;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23034047' fill-opacity='0.32'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 20px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333; /* Dark text for light background */
+}
+
+/* Card container */
+.auth-card {
+  background: #f9f9f9;
+  padding: 3rem 2.5rem 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 15px;
+  box-shadow:
+    0 8px 20px rgba(6, 182, 212, 0.3),
+    0 4px 8px rgba(6, 182, 212, 0.15);
+  color: #333;
+  text-align: center;
+}
+
+/* App Heading with gradient text */
+.app-heading {
+  font-weight: 900;
+  font-size: 3.5rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Form title */
+.form-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #06b6d4;
+}
+
+/* Error message styling */
+.error-msg {
+  color: #f87171; /* soft red */
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* Input focus ring */
+input:focus {
+  outline: none;
+  border-color: #06b6d4;
+  box-shadow: 0 0 8px #06b6d4;
+}
