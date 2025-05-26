@@ -57,7 +57,7 @@ http://localhost:3000
 
 ## 📽️ Demo Video
 
-🎥 [Click to see the app in action](https://github.com/KunalGulati2/PhishDetector/blob/main/demo.mp4)
+🎥 [Click to see the app in action](https://github.com/KunalGulati2/PhishDetector/blob/main/assets/demo.mp4)
 
 ---
 
